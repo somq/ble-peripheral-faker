@@ -27,7 +27,7 @@ Feed me with a JSON file and I will mount you a ble peripheral with fake notifie
 git clone https://github.com/somq/ble-peripheral-faker.git
 cd ble-peripheral-faker
 npm i
-npm run start -- yourfile.json
+npm start -- yourfile.json
 ```
 
 ## Usage
