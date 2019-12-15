@@ -6,7 +6,7 @@ const appUtils = require('./app-utils');
 
 
 var FakeCharacteristic = function(params) {
-	console.log('FakeCharacteristic', params)
+	// console.log('FakeCharacteristic', params)
 	FakeCharacteristic.super_.call(this, {
 			uuid: params.uuid,
 			properties: params.properties
