@@ -15,6 +15,7 @@ const events = new Emitter();
 bleno.on("stateChange", (state) => {
 	console.log("onStateChange: " + state);
 	if (state === "poweredOn") {
+  bleno.reset()
 		
 		/**
 		 * STANDARD (Services advertising)
@@ -46,7 +47,6 @@ bleno.on("stateChange", (state) => {
 		});
 	}
 });
-
 
 bleno.on("advertisingStart", (error) => {
 	console.log("Adverising started!: " + error);
@@ -96,9 +96,44 @@ bleno.on("advertisingStart", (error) => {
 	}
 
 	bleno.setServices(servicesInstances, (error) => {
-		// console.error("setServices: ", error);
+    if (typeof error !== 'undefined') {
+      console.error('setServices error!', error);
+    }
 	});
 
+})
+
+bleno.on("accept", (event) => {
+  console.log('accept event!', event);
+})
+
+bleno.on("mtuChange", (event) => {
+  console.log('mtuChange event!');
+})
+
+bleno.on("disconnect", (event) => {
+  console.log('disconnect event!', event);
+})
+
+bleno.on("advertisingStop", (event) => {
+  console.log('advertisingStop event!', event);
+})
+
+bleno.on("servicesSet", (event) => {
+  console.log('servicesSet event!', event);
+})
+
+bleno.on("rssiUpdate", (event) => {
+  console.log('rssiUpdate event!', event);
+})
+
+
+bleno.on("advertisingStartError", (error) => {
+  console.log('advertisingStartError!', error);
+})
+
+bleno.on("servicesSetError", (error) => {
+  console.log('servicesSetError error!',  error);
 })
 
 
