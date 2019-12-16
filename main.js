@@ -5,7 +5,7 @@ const appUtils = require('./app-utils');
 
 const JSONData = appUtils.getJSONFile();
 
-const bleno = require("bleno");
+const bleno = require("./bleno");
 const FakeCharacteristic = require('./fake-characteristic');
 const EventEmitter = require('events');
 class Emitter extends EventEmitter {}
@@ -15,6 +15,12 @@ const events = new Emitter();
 bleno.on("stateChange", (state) => {
 	console.log("onStateChange: " + state);
 	if (state === "poweredOn") {
+
+  /**
+   * @note we need to patch bleno for this one
+   * @see https://github.com/noble/noble/pull/865/files
+   * @todo monkey patch
+   */
   bleno.reset()
 		
 		/**
