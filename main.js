@@ -5,7 +5,7 @@ const appUtils = require('./app-utils');
 
 const JSONData = appUtils.getJSONFile();
 
-const bleno = require("./bleno");
+const bleno = require("bleno");
 const FakeCharacteristic = require('./fake-characteristic');
 const EventEmitter = require('events');
 class Emitter extends EventEmitter {}
