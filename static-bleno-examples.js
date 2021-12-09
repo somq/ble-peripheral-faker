@@ -12,6 +12,7 @@ function getJSONFile() {
 }
 
 const JSONdata = getJSONFile();
+console.log(`🚀 / JSONdata`, JSONdata.name);
 // const JSONdata = require('./CITCC');
 
 const bleno = require('bleno');
