@@ -35,8 +35,9 @@ npm start -- example-peripheral.json
 
 Troubleshoot
 
-> In case of dependency build/start issue, please refer to the [Bleno docs](https://github.com/noble/bleno#bleno)  
-> A good starting point is to install [core dependencies](https://github.com/noble/bleno#prerequisites) and rebuild dependencies with `npm rebuild`
+> Under the hood, this tool uses a [fork](https://github.com/abandonware/bleno) of [Bleno](https://github.com/noble/bleno)  
+> In case of dependency build/start issue, please refer to the [Bleno docs](https://github.com/abandonware/bleno#bleno)  
+> A good starting point is to install [core dependencies](https://github.com/abandonware/bleno#prerequisites) and rebuild dependencies with `npm rebuild`
 
 ## Usage
 
