@@ -1,0 +1,99 @@
+{
+  "name": "My Example Peripheral",
+  "advertising": ["0x01", "0x02"],
+  "advertisementData": [
+    3, 25, 0, 0, 2, 1, 5, 3, 3, 10, 24, 19, 9, 79, 67, 80, 67, 99, 54, 32, 35,
+    49, 57, 57, 57, 56, 56, 56, 48, 48, 48
+  ],
+  "scanData": [
+    30, 255, 255, 255, 26, 255, 65, 25, 0, 76, 0, 0, 67, 0, 0, 83, 0, 0, 87, 0,
+    0, 0, 0, 0, 0, 0, 84, 0, 0, 0, 0
+  ],
+  "services": [
+    {
+      "uuid": "A1234523-258B-D820-E096-7C7C2190E980",
+      "characteristics": [
+        {
+          "uuid": "A1234524-258B-D820-E096-7C7C2190E980",
+          "properties": ["read", "notify"],
+          "characteristicName": "STATUS",
+          "notifyValues": [
+            "0x19",
+            "0x1E",
+            "0x54",
+            "0x26",
+            "0x2B",
+            "0x16",
+            "0x47",
+            "0x48",
+            "0x1F",
+            "0x20",
+            "0x21",
+            "0x6F",
+            "0x0E",
+            "0x2E",
+            "0x30",
+            "0x31",
+            "0x32",
+            "0x33",
+            "0x34",
+            "0x35",
+            "0x36",
+            "0xB1",
+            "0xB3",
+            "0xB5",
+            "0x90",
+            "0x91",
+            "0x92",
+            "0xFD",
+            "0xFE"
+          ],
+          "notifyIntervalMax": 15,
+          "notifyIntervalMin": 5
+        },
+        {
+          "uuid": "A1234525-258B-D820-E096-7C7C2190E980",
+          "properties": ["read", "write"],
+          "characteristicName": "CMD_REQ"
+        },
+        {
+          "uuid": "A1234526-258B-D820-E096-7C7C2190E980",
+          "properties": ["read", "notify"],
+          "characteristicName": "CMD_RESP",
+          "notifyValues": ["0xEE"],
+          "notifyInterval": 5
+        },
+        {
+          "uuid": "A123452A-258B-D820-E096-7C7C2190E980",
+          "properties": ["read", "notify"],
+          "characteristicName": "BATTERY_LEVELS"
+        }
+      ]
+    },
+    {
+      "uuid": "A756DB00-258B-D820-E096-7C7C2190E980",
+      "characteristics": [
+        {
+          "uuid": "A756DB01-258B-D820-E096-7C7C2190E980",
+          "properties": ["read", "notify"],
+          "characteristicName": "BLE_FIRM_INFO"
+        },
+        {
+          "uuid": "A756DB07-258B-D820-E096-7C7C2190E980",
+          "properties": ["read", "write"],
+          "characteristicName": "GNSS_POS"
+        }
+      ]
+    },
+    {
+      "uuid": "180F",
+      "characteristics": [
+        {
+          "uuid": "2A19",
+          "properties": ["read", "notify"],
+          "characteristicName": "BATTERY"
+        }
+      ]
+    }
+  ]
+}
