@@ -1,14 +1,17 @@
 # ble-peripheral-faker
 
-Feed me with a JSON file and I will mount you a ble peripheral with fake notifies and reponses to read in no time!
+> 📄 ➙ 🥸📡 Feed me with a JSON file and I will mock you a BLE peripheral with fake notifies and reponses to read in no time!
 
 ## Table of Contents
 
-* [Features](#features)
-* [Install](#install)
-* [Usage](#usage)
-* [Todo](#todo)
-* [License](#license)
+- [ble-peripheral-faker](#ble-peripheral-faker)
+  - [Table of Contents](#table-of-contents)
+  - [Features](#features)
+  - [Install](#install)
+  - [Usage](#usage)
+  - [Todo](#todo)
+  - [License](#license)
+    - [MIT License](#mit-license)
 
 ## Features
 
@@ -16,10 +19,10 @@ Feed me with a JSON file and I will mount you a ble peripheral with fake notifie
 
 > Simply build a JSON file respecting the [described format](#usage) and the module will care of mouting a gatt server as a ble peripheral with random values to read and notifies at random times from your JSON file.
 
-* Ble peripheral
-  * Custom services and characteristics from the JSON file
-  * Automatic random values to read and notified from an array in the JSON file
-  * Notifies are triggered by a random timer using a min and a max value set in the JSON file
+- Ble peripheral
+  - Custom services and characteristics from the JSON file
+  - Automatic random values to read and notified from an array in the JSON file
+  - Notifies are triggered by a random timer using a min and a max value set in the JSON file
 
 ## Install
 
@@ -27,8 +30,13 @@ Feed me with a JSON file and I will mount you a ble peripheral with fake notifie
 git clone https://github.com/somq/ble-peripheral-faker.git
 cd ble-peripheral-faker
 npm i
-npm start -- yourfile.json
+npm start -- example-peripheral.json
 ```
+
+Troubleshoot
+
+> In case of dependency build/start issue, please refer to the [Bleno docs](https://github.com/noble/bleno#bleno)  
+> A good starting point is to install [core dependencies](https://github.com/noble/bleno#prerequisites) and rebuild dependencies with `npm rebuild`
 
 ## Usage
 
@@ -58,19 +66,19 @@ JSON file must respect the following format:
               ...
 ```
 
-| property  | value description |
-| ------------- | ------------- |
-name | the name you wish to give to your peripheral
-advertising | classic advertising values
-advertisementData & scanData | EIR formated advertising data
-services | an array of objects each containing service data
-uuid | uuid of your service
-characteristics | an array of objects each containing characteristic data
-properties | an array of strings containing characteristics properties (refer to [bleno doc.](https://github.com/sandeepmistry/bleno#characteristic))
-characteristicName | a string identifying a characteristic
-notifyValues | an array of strings containing hex-string. This is the values used to notify or respond to read on the characteristic
-notifyIntervalMax | a int used to set the max interval time <br> *Notifies are triggered at a random time between one of the notifyIntervalMin and notifyIntervalMax values*
-notifyIntervalMin | a int used to set the min interval time <br> *Notifies are triggered at a random time between one of the notifyIntervalMin and notifyIntervalMax values*
+| property                     | value description                                                                                                                                        |
+| ---------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| name                         | the name you wish to give to your peripheral                                                                                                             |
+| advertising                  | classic advertising values                                                                                                                               |
+| advertisementData & scanData | EIR formated advertising data                                                                                                                            |
+| services                     | an array of objects each containing service data                                                                                                         |
+| uuid                         | uuid of your service                                                                                                                                     |
+| characteristics              | an array of objects each containing characteristic data                                                                                                  |
+| properties                   | an array of strings containing characteristics properties (refer to [bleno doc.](https://github.com/sandeepmistry/bleno#characteristic))                 |
+| characteristicName           | a string identifying a characteristic                                                                                                                    |
+| notifyValues                 | an array of strings containing hex-string. This is the values used to notify or respond to read on the characteristic                                    |
+| notifyIntervalMax            | a int used to set the max interval time <br> _Notifies are triggered at a random time between one of the notifyIntervalMin and notifyIntervalMax values_ |
+| notifyIntervalMin            | a int used to set the min interval time <br> _Notifies are triggered at a random time between one of the notifyIntervalMin and notifyIntervalMax values_ |
 
 ## Todo
 
