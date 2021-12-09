@@ -1,6 +1,6 @@
 {
   "name": "ble-peripheral-faker",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "📄 ➙ 🥸📡 Feed me with a JSON file and I will mock you a BLE peripheral with fake notifies and reponses to read in no time! ",
   "main": "main.js",
   "scripts": {
@@ -11,6 +11,6 @@
   "author": "somq",
   "license": "ISC",
   "dependencies": {
-    "bleno": "^0.5.0"
+    "bleno": "https://github.com/abandonware/bleno"
   }
 }
